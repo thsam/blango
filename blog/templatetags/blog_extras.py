@@ -3,8 +3,11 @@ from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html
+import logging
 
 user_model = get_user_model()
+logger = logging.getLogger(__name__)
+#logger.debug("Loaded %d recent posts for post %d", len(posts), post.pk)
 
 register = template.Library()
 @register.filter
