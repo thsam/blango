@@ -18,7 +18,7 @@ from configurations import values
 import dj_database_url
 
 
-
+INTERNAL_IPS = ["192.168.11.179"]
 
 class Dev(Configuration):
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,6 +47,7 @@ class Dev(Configuration):
     CSRF_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SAMESITE = 'None'
 
+   
 
     # Application definition
 
@@ -59,7 +60,8 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         "blog",
         "crispy_forms",
-        "crispy_bootstrap5"
+        "crispy_bootstrap5",
+        "debug_toolbar"
     ]
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
     CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -71,6 +73,7 @@ class Dev(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
     #     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ]
 
     ROOT_URLCONF = 'blango.urls'
