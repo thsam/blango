@@ -34,6 +34,8 @@ class Dev(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     #DEBUG = True
     DEBUG = values.BooleanValue(True)
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
 
 
     #ALLOWED_HOSTS = ['*']
